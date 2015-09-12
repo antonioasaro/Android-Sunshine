@@ -197,7 +197,7 @@ public class ForecastFragment extends Fragment {
             }
 
             for (String s : resultStrs) {
-                Log.v(LOG_TAG, "Forecast entry: " + s);
+//                Log.v(LOG_TAG, "Forecast entry: " + s);
             }
             return resultStrs;
         }
@@ -242,7 +242,7 @@ public class ForecastFragment extends Fragment {
 
                 URL url = new URL(builtUri.toString());
 
-                Log.d(LOG_TAG, "Built URI " + builtUri.toString());
+//                Log.d(LOG_TAG, "Built URI " + builtUri.toString());
 
                 // Create the request to OpenWeatherMap, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -303,6 +303,17 @@ public class ForecastFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String[] result) {
+            if (result != null) {
+                mForecastAdapter.clear();
+                for (String dayForecastString : result) {
+                    mForecastAdapter.add(dayForecastString);
+                }
+            }
+
         }
 
         @Override
