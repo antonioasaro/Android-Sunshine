@@ -9,8 +9,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-//            Toast.makeText(this, "Viewmap settings", Toast.LENGTH_SHORT).show();
-
 
 public class MainActivity extends ActionBarActivity {
 
