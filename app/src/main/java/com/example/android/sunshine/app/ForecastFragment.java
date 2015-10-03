@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -106,7 +105,7 @@ public class ForecastFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String forecast = mForecastAdapter.getItem(i);
-                Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
                 Intent detailActivity = new Intent(getActivity(), DetailActivity.class);
                 detailActivity.putExtra(Intent.EXTRA_TEXT, forecast);
                 startActivity(detailActivity);

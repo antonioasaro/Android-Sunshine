@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+//            Toast.makeText(this, "Viewmap settings", Toast.LENGTH_SHORT).show();
 
 
 public class MainActivity extends ActionBarActivity {
@@ -64,7 +65,6 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(geoLocation);
         if (intent.resolveActivity(getPackageManager()) != null) {
-//            Toast.makeText(this, "Viewmap settings", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         } else {
             Log.e("MainActivity", "map error");
